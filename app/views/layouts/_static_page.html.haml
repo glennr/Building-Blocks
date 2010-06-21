@@ -1,7 +1,3 @@
-#container
-  = render :partial => 'layouts/header'
-  #content
-    %h2 Inner Page Content
-    = render :partial => 'layouts/flashes'
-    = yield :layout
-  = render :partial => 'layouts/footer'
+= render :partial => 'layouts/header'
+= render :partial => 'layouts/content'
+= render :partial => 'layouts/footer'

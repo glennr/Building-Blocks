@@ -1,7 +1,9 @@
 // Colors
 
-!black              = #111
+!black              = #444
 !white              = #eee
+!blue               = #37b0e1
+!yellow             = #f68333
 
 
 // Partials
@@ -9,7 +11,26 @@
 @import partials/header.sass
 @import partials/main.sass
 @import partials/sidebar.sass
-@import partials/middle.sass
 @import partials/footer.sass
 @import partials/flashes.sass
 @import partials/featured.sass
+
+body
+  background= image_url("bg-main.jpg") "no-repeat center top"
+  border-top: 6px #333 solid
+  
+  p
+    color= !black
+    
+  h1, h2, h6
+    color= !blue
+  h4
+    color= !yellow
+    font-family: Palatino, Georgia, "Times New Roman", Times, serif
+    text-transform: none
+  h6
+    font-size: 1em
+    
+  #header, #featured
+    li, p
+      font-family: Palatino, Georgia, "Times New Roman", Times, serif
