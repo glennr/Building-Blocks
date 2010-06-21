@@ -17,10 +17,10 @@ Rails::Initializer.run do |config|
   config.gem 'paperclip'
   #config.gem 'heroku_san'
   #config.gem 'rakeist'
-  
+
   # inherited resources for Rails 2.3
-  config.gem 'inherited_resources'
-  config.gem 'responders'
+  #config.gem 'inherited_resources'
+  #config.gem 'responders'
 
   # configatron
   config.gem "yamler"

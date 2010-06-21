@@ -1,9 +1,4 @@
-#container
-  = render :partial => 'layouts/header'
-  #content
-    %h2 Content
-    = render :partial => 'layouts/flashes'
-    = yield :layout
-
-  = render :partial => 'layouts/sidebar'
-  = render :partial => 'layouts/footer'
+= render :partial => 'layouts/header'
+= render :partial => 'layouts/featured'
+= render :partial => 'layouts/content'
+= render :partial => 'layouts/footer'

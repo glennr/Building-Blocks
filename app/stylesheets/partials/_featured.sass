@@ -1,3 +1,57 @@
-#featured .wrapper
-  background= !black
-  height: 100px
+#featured
+  background= image_url("divider.png") "no-repeat center bottom"
+  margin-bottom: 40px
+  
+  h1, h2
+    color= !blue
+    letter-spacing: 0.03em
+    text-transform: none
+    
+  p, li
+    font-family: Palatino, Georgia, "Times New Roman", Times, serif
+    letter-spacing: 0.02em
+    line-height: 1.2em
+    font-size: 1.1em
+  
+  #sponsor
+    background= image_url("sponsor.png") "no-repeat left"
+    height: 300px
+    
+    h1
+      font-size: 2.3em
+      line-height: 1.2em
+      padding: 80px 0 10px 0px
+      
+    p
+      padding-right: 20px
+      
+    h1, p, ul
+      margin-left: 230px
+      
+    ul
+      +horizontal-list
+      margin: 20px 0 0 230px
+      li
+        background: white
+        color= !blue
+        font-size: 1.05em
+        margin-right: 10px
+        padding: 6px
+        text-align: center
+        width: 80px
+        +rounded
+        &#search
+          background: #444
+          color= !yellow
+          
+      
+  #meet
+    background= image_url("featured.png") "no-repeat right"
+    height: 300px
+    
+    h2, p
+      padding-right: 200px
+      text-align: right
+      
+    h2
+      padding-top: 80px

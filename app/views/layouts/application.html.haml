@@ -5,6 +5,7 @@
     - title = yield(:title) || configatron.site_description
     %title= configatron.site_name + " : " + title
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+
     <meta name="google-site-verification" content=" YOUR TAG HERE " />
     <meta name="description" content=" YOUR META TAGS" />
 
@@ -21,5 +22,5 @@
       = render :partial => "layouts/#{controller.controller_name}"
     - else
       = yield
-      
+
     = javascript_include_tag 'jquery-1.4.2.min', 'application', :cache => true
