@@ -1,7 +1,9 @@
-# Settings specified here will take precedence over those in config/environment.rb
-
-config.gem "rspec", :version => "1.3.0", :lib => false
-config.gem "rspec-rails", :version => "1.3.2", :lib => false
+config.gem 'cucumber-rails',   :lib => false, :version => '>=0.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/cucumber-rails'))
+config.gem 'database_cleaner', :lib => false, :version => '>=0.5.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/database_cleaner'))
+config.gem 'webrat',           :lib => false, :version => '>=0.7.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/webrat'))
+config.gem 'rspec',            :lib => false, :version => '>=1.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
+config.gem 'rspec-rails',      :lib => false, :version => '>=1.3.2' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
+config.gem "factory_girl",     :lib => false, :version => '= 1.2.4'
 
 # Make Autotest happy
 ENV['AUTOFEATURE'] = APP_CONFIG[:autofeature] || "true"

@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.resources :children
+
   map.static_page ':page',
     :controller => 'static_page',
     :action => 'show',

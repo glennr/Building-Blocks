@@ -27,8 +27,9 @@ Rails::Initializer.run do |config|
   #config.gem 'rakeist'
 
   # inherited resources for Rails 2.3
-  #config.gem 'inherited_resources'
-  #config.gem 'responders'
+  config.gem 'dry_scaffold', :lib => false
+  config.gem 'responders', :version => '= 0.4.5'
+  config.gem 'inherited_resources', :version => '=1.0.6'
 
   config.time_zone = 'UTC'
 
@@ -37,5 +38,4 @@ Rails::Initializer.run do |config|
   key = APP_CONFIG[:action_controller][:session][:key] rescue DEFAULT_KEY
   secret = APP_CONFIG[:action_controller][:session][:secret] rescue DEFAULT_SECRET
   config.action_controller.session = { :key => key, :secret => secret }
-
 end

@@ -7,6 +7,7 @@ Scenario: "See banner, follow link"
   Given I am on the homepage
   When I click the featured child banner
   Then I should be on the child details page
+  
 
 
   

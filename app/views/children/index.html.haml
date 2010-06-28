@@ -1,0 +1,15 @@
+%h1.heading
+  = "Children"
+  
+%p.actions
+  = link_to 'New Child', new_resource_path
+  
+%table
+  %thead.header
+    %tr
+      %th.actions= 'Actions'
+  %tbody.items.resources
+    - collection.each do |resource|
+      = render 'item', :resource => resource
+      
+= will_paginate(collection)
