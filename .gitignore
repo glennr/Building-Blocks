@@ -2,7 +2,7 @@
 log/*.log
 tmp/**/*
 config/database.yml
-config/initializers/site_keys.rb
+config/settings.yml
 db/*.sqlite3
 public/system/*
 db/test.sqlite3-journal
@@ -10,6 +10,8 @@ app/stylesheets/.sass-cache/*
 
 # Cucumber/webrat tmp files
 webrat-*
+rerun.txt
+coverage/*
 
 # The .bundle folder should never be checked into the code repository as it holds machine-local configuration
 .bundle/

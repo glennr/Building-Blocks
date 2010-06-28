@@ -4,7 +4,7 @@
 
   Licensed under GPL and MIT. */
 
-@import 960/grid.sass
+@import "960/grid"
 
 
 //The following generates the custom grids used by Fuselage
@@ -22,13 +22,13 @@
 // But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
 
 .two-column
-  
+
   #header
     #logo
       +grid(8, 24)
     #user_nav, #main_nav
       +grid(16, 24)
-  
+
   #featured
     #sponsor
       +grid(15, 24)
@@ -37,7 +37,7 @@
     #meet
       +grid(9, 24)
       +omega
-  
+
   #content
     #flashes
     #main
@@ -55,12 +55,12 @@
       +grid(12, 24)
       +alpha
       +omega
-      
+
   #middle
-  
+
   #footer
 
-  
+
   // #sidebar,
   // #main-content
   //// +grid-unit-base
