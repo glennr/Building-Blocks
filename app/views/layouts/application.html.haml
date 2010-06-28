@@ -9,13 +9,13 @@
     <meta name="google-site-verification" content=" YOUR TAG HERE " />
     <meta name="description" content=" YOUR META TAGS" />
 
-    = stylesheet_link_tag 'compiled/fuselage.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
     /[if IE]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
 
     = yield(:head)
     
-  %body.two-column.fuselage
+  %body.two-column.screen
 
     -# using Matt Fields nested layouts method http://rubynerds.blogspot.com/2008/06/nested-layouts-in-rails.html
     - if has_layout_partial(controller.controller_name)
