@@ -32,16 +32,15 @@
       +horizontal-list
       margin: 20px 0 0 230px
       li
-        background: white
+        background= image_url("button1.png") "no-repeat center"
         color= !blue
         font-size: 1.05em
-        margin-right: 10px
-        padding: 6px
+        padding: 10px
         text-align: center
-        width: 80px
+        width: 90px
         +rounded
         &#search
-          background: #444
+          background= image_url("button2.png") "no-repeat center"
           color= !yellow
           
       
@@ -49,8 +48,15 @@
     background= image_url("featured.png") "no-repeat right"
     height: 300px
     
+    #info
+      float: left
+      width: 170px
+    #image
+      float: right
+      padding: 54px 26px 0 0
+    
     h2, p
-      padding-right: 200px
+      padding-right: 20px
       text-align: right
       
     h2
