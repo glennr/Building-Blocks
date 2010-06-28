@@ -10,6 +10,7 @@ app/stylesheets/.sass-cache/*
 
 # Cucumber/webrat tmp files
 webrat-*
+capybara*
 rerun.txt
 coverage/*
 

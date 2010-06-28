@@ -2,8 +2,6 @@
 
 config.gem "rspec", :version => "1.3.0", :lib => false
 config.gem "rspec-rails", :version => "1.3.2", :lib => false
-config.gem "cucumber", :version => "0.6.4", :lib => false
-config.gem "cucumber-rails", :version => "0.3.0", :lib => false
 
 # Make Autotest happy
 ENV['AUTOFEATURE'] = APP_CONFIG[:autofeature] || "true"
