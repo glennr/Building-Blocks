@@ -1,9 +1,7 @@
-%h1.heading
-  = "Child %s" % resource.id
-  
+%h1.heading= "Child %s" % resource.id
+
 - content_tag_for(:dl, resource) do
-  
-%p.actions
-  = link_to 'Edit', edit_resource_path(resource)
+  %p.actions
+    = link_to 'Edit', edit_resource_path(resource)
   |
   = link_to 'Index', collection_path

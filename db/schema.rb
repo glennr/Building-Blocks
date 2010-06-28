@@ -16,4 +16,15 @@ ActiveRecord::Schema.define(:version => 20100628153508) do
     t.datetime "updated_at"
   end
 
+  create_table "profiles", :force => true do |t|
+    t.string   "screen_name"
+    t.text     "bio"
+    t.integer  "age"
+    t.string   "website_url"
+    t.text     "interests"
+    t.text     "hobbies"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end

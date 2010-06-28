@@ -30,7 +30,7 @@ describe ApplicationController do
       APP_CONFIG[:meta][:keywords] = "some keywords"
       get :index
       assigns[:meta_description].should  == "some description"
-      assigns[:meta_keywords].should == "some keywords"
+      assigns[:meta_keywords].should  == "some keywords"
     end
   end
   
