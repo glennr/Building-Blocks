@@ -10,8 +10,11 @@
         %li age
         %li#search search
     #meet.featured
-      #info
-        %h2= link_to "Meet Akash", child_url(@child), :id => "sponsor_now"
-        %p he's a 3 year old boy and likes football
-      #image
-        = image_tag "child.png", :alt => "Featured child"
+      - if @child
+        #info
+          %h2= link_to "Meet #{@child.first_name}", child_path(@child), :id => "sponsor_now"
+          %p== he's a 3 year old boy who likes #{shorten_likes(@child.likes)}
+        #image
+          = image_tag "child.png", :alt => "Featured child"
+      - else
+        %p There are no children defined yet

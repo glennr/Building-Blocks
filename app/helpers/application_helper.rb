@@ -11,4 +11,9 @@ module ApplicationHelper
     File.exists?( File.join( RAILS_ROOT, 'app', 'views', 'layouts', "_#{name}.html.haml" ) )
   end
 
+  def shorten_likes(likes)
+    # takes the first word out of the likes string
+    likes.split(/(,|\s+)/).first.downcase
+  end
+
 end

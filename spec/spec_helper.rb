@@ -10,6 +10,7 @@ require 'webrat'
 
 require 'factory_girl'
 Dir[File.expand_path(File.join(File.dirname(__FILE__),'factories','**','*.rb'))].each {|f| require f}
+
 require 'shoulda'
 
 # Requires supporting files with custom matchers and macros, etc,
