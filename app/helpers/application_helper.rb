@@ -1,4 +1,7 @@
 module ApplicationHelper
+
+  include Age
+
   # Usage: simply invoke title() at the top of each view
   # E.g.
   # - title "Home"

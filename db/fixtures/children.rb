@@ -3,7 +3,7 @@ Dir[File.expand_path(File.join(File.dirname(__FILE__),'/../../spec/factories','*
 
 unless Rails.env.production?
   puts "Creating dummy child data"
-  1.upto 5 do |i|
+  1.upto 10 do |i|
     Factory(:child)
   end
 

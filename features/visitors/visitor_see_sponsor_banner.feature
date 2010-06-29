@@ -14,12 +14,11 @@ Scenario: "See banner with child details"
 
 Scenario: "See banner with female child details"
   Given the following children
-      | first_name | likes             | gender |
-      | Suzy       | painting, drawing | F      |
+      | first_name | likes             | gender | birthday    |
+      | Suzy       | painting, drawing | F      | 1_YEARS_AGO |
   When I go to the homepage
   Then I should see "Suzy"
-  And I should see "she's a"
-  And I should see "girl who likes painting"
+  And I should see "she's a 1 year old girl who likes painting"
   
 Scenario: "See banner, follow link"
   Given a child

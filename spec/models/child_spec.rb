@@ -18,7 +18,6 @@ describe Child do
       Factory.create(:child).should be_valid
     end
     
-    
   end
 
 end
