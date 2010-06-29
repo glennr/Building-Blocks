@@ -4,7 +4,7 @@
       %h1
         Sponsor
         %br a child today
-      %p For about €1, you can transform a child's life by providing basic necessities like education, food, and the chance to help them get proper education.
+      %p For less than €1 a day, you can transform a child's life with basic necessities like education, food, and the chance to help them get proper education *rewrite.
       %ul
         %li boy/girl
         %li age
@@ -13,7 +13,7 @@
       - if @child
         #info
           %h2= link_to "Meet #{@child.first_name}", child_path(@child), :id => "sponsor_now"
-          %p== he's a 3 year old boy who likes #{shorten_likes(@child.likes)}
+          %p== #{he_she?(@child.gender)}'s a 3 year old #{boy_girl?(@child.gender)} who likes #{shorten_likes(@child.likes)}
         #image
           = image_tag "child.png", :alt => "Featured child"
       - else
