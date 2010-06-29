@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20100629053809) do
     t.string   "first_name"
     t.string   "likes"
     t.string   "gender"
+    t.date     "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

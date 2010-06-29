@@ -11,11 +11,14 @@ describe Child do
     it { should allow_value("F").for(:gender) }
     it { should_not allow_value('male').for(:gender) }
     it { should_not allow_value('other').for(:gender) }
+    
+    it { should validate_presence_of(:birthday) }
 
     it "new instance should be valid" do
       Factory.create(:child).should be_valid
     end
-     
+    
+    
   end
 
 end

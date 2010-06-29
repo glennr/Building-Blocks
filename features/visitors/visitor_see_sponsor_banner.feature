@@ -6,17 +6,16 @@ Feature: Visitor see sponsor banner
 
 Scenario: "See banner with child details"
   Given the following children
-      | first_name  | likes             | gender   |
-      | Vijay       | Soccer, cricket   | M     |
+      | first_name | likes           | gender | birthday    |
+      | Vijay      | Soccer, cricket | M      | 3_YEARS_AGO |
   When I go to the homepage
   Then I should see "Vijay"
-  And I should see "he's a"
-  And I should see "boy who likes soccer"
+  And I should see "he's a 3 year old boy who likes soccer"
 
 Scenario: "See banner with female child details"
   Given the following children
-      | first_name  | likes             | gender   |
-      | Suzy        | painting, drawing | F   |
+      | first_name | likes             | gender |
+      | Suzy       | painting, drawing | F      |
   When I go to the homepage
   Then I should see "Suzy"
   And I should see "she's a"
