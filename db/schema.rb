@@ -9,6 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20100629053809) do
+
+  create_table "children", :force => true do |t|
+    t.string   "first_name"
+    t.string   "likes"
+    t.string   "gender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

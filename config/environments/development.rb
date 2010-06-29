@@ -1,6 +1,21 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
-config.gem 'dry_scaffold', :version => "0.3.8", :lib => false
+config.gem "rspec", :version => "1.3.0", :lib => false
+config.gem "rspec-rails", :version => "1.3.2", :lib => false
+config.gem "cucumber", :version => "0.6.4", :lib => false
+config.gem 'cucumber-rails',   :lib => false, :version => '>=0.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/cucumber-rails'))
+config.gem 'database_cleaner', :lib => false, :version => '>=0.5.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/database_cleaner'))
+
+#Autotest
+config.gem "ZenTest", :lib => false
+config.gem "autotest-rails", :lib => false
+config.gem "autotest-fsevent", :lib => false
+config.gem "autotest-growl", :lib => false
+# dont forget to make a ~/.autotest file with
+#   require "autotest/growl"
+#   require "autotest/fsevent"
+
+config.gem 'dry_scaffold', :version => ">= 0.3.8", :lib => false
 # Handy for debugging E.g. script/server --debugger
 config.gem "ruby-debug"
 config.gem "rails-footnotes"
