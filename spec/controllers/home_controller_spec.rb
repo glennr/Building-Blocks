@@ -27,5 +27,15 @@ describe HomeController do
       it { should render_template(:index) }
       it { should_not set_the_flash }
     end
+    
+    context "render with no children in db" do
+      before :each do
+        get :index, :id => 1
+      end
+    
+      it { should respond_with(:success) }
+      it { should render_template(:index) }
+      it { should_not set_the_flash }
+    end
   end
 end
