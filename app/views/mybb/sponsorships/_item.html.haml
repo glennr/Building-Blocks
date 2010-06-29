@@ -1,0 +1,10 @@
+- content_tag_for(:tr, resource, :class => cycle(:odd, :even)) do
+  %td.child_id= h resource.try(:child_id)
+  %td.user_id= h resource.try(:user_id)
+  %td.purchase_id= h resource.try(:purchase_id)
+  %td.actions
+    = link_to 'Show', resource_path(resource)
+    |
+    = link_to 'Edit', edit_resource_path(resource)
+    |
+    = link_to 'Destroy', resource, :confirm => 'Are you sure?', :method => :delete

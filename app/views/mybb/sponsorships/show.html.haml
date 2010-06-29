@@ -1,0 +1,15 @@
+%h1.heading
+  = "Sponsorship %s" % resource.id
+  
+- content_tag_for(:dl, resource) do
+  %dt.label= 'Child'
+  %dd.child_id= h resource.try(:child_id)
+  %dt.label= 'User'
+  %dd.user_id= h resource.try(:user_id)
+  %dt.label= 'Purchase'
+  %dd.purchase_id= h resource.try(:purchase_id)
+  
+%p.actions
+  = link_to 'Edit', edit_resource_path(resource)
+  |
+  = link_to 'Index', collection_path

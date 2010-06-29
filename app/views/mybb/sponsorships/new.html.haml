@@ -1,0 +1,10 @@
+%h1.heading
+  = 'New Sponsorship'
+
+- semantic_form_for(resource, :url => mybb_sponsorships_path(resource)) do |form|
+  = render 'form', :form => form
+  - form.buttons do
+    = form.commit_button 'Create'
+
+%p.actions
+  = link_to 'Cancel', collection_path
