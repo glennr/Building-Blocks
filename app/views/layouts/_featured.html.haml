@@ -9,13 +9,14 @@
         %li boy/girl
         %li age
         %li#search search
+
     #meet.featured
       - if @child
         #info
           %h2= link_to "Meet #{@child.first_name}", child_path(@child), :id => "sponsor_now"
           %p== #{he_she?(@child.gender)}'s a #{age(@child.birthday)} year old #{boy_girl?(@child.gender)} who likes #{shorten_likes(@child.likes)}
         #image
-
-          = image_tag 'http://lh4.ggpht.com/_c3FwZWa0OCQ/SoAvckSyeLE/AAAAAAAAJSM/jT-tJfiSWxc/s154-c/Cricket_Macedonia_vs_Wales_2009.jpg', :alt => "Featured child"
+          = image_tag "kid.png", :alt => "Featured child"
       - else
         %p There are no children defined yet
+

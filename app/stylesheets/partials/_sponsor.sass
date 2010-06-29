@@ -1,0 +1,99 @@
+#step1
+  .steps
+    margin: 10px 0 40px 0
+    ul
+      +horizontal-list
+      margin: 0 auto
+      margin-left: 75px
+      li
+        padding-right: 50px
+        margin-right: 30px
+        font-size: 1.1em
+        font-weight: bold
+        color: #ccc
+        background= image_url("arrow.png") "no-repeat right"
+        &.last
+          background: none
+        &.active
+          color= !blue
+  #main
+    background= image_url("child.png") "no-repeat left top"
+    margin-bottom: 20px
+    img
+      padding: 35px 29px
+      float: left
+    p
+      
+    .text
+      margin: 75px 0 0 300px
+      .short
+        padding: 10px 0
+        width: 150px
+      a
+        float: left
+        margin: 20px 0
+        padding: 6px 35px
+        background: #333
+        color= !yellow
+        +rounded(6px)
+        font-size: 1.1em
+        
+  #sidebar
+    .form1
+      background= image_url("form1.png") "no-repeat top center"
+      +rounded
+      height: 78px
+      margin-bottom: 10px
+      padding: 50px 0 0 10px
+      
+      h6
+        padding-left: 5px
+        margin-bottom: 7px
+    
+      ul
+        +horizontal-list
+
+        li
+          background= image_url("button1.png") "no-repeat center"
+          color= !blue
+          font-size: 1.05em
+          padding: 10px 5px
+          text-align: center
+          width: 90px
+          +rounded
+          font-family: Palatino, Georgia, "Times New Roman", Times, serif
+          letter-spacing: 0.02em
+          line-height: 1.2em
+          font-size: 1em
+        
+
+          &#search
+            background= image_url("button2.png") "no-repeat center"
+            color= !yellow
+    .form2
+      background= image_url("form2.png") "no-repeat top center"
+      padding: 20px
+      float: left
+      ul
+        float: none
+        display: block
+        li
+          display: inline
+          float: left
+
+          list-style-type: none 
+          margin: 0
+          background= image_url("thumb.png") "no-repeat top left"
+          width: 125px
+          img
+            padding: 12px
+            float: left
+            
+  .full
+    margin-bottom: 30px
+    .third
+      background= image_url("header.png") "no-repeat top center"
+      h6
+        padding: 50px 20px
+    .third
+    .third
