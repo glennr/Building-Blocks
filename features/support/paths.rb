@@ -11,7 +11,11 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
 
-    when /the child details page/
+    when /the child details page$/
+      child_path(@child)
+
+    when /the child details page for "(.+)"/
+      @child = Child.find_by_first_name($1)
       child_path(@child)
 
     # Add more mappings here.

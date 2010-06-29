@@ -1,6 +1,5 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-
 describe ChildrenController do
   integrate_views
 
@@ -8,15 +7,24 @@ describe ChildrenController do
     @child = Factory.create(:child)
   end
 
+  context "show action" do    
+    before :each do
+      @child = Factory.create(:child)
+      get :show, :id => @child
+    end
+
+    it { should assign_to(:child) }
+    it { should respond_with(:success) }
+    it { should render_template(:show) }
+    it { should_not set_the_flash }
+    
+  end
+
+
   it "index action should render index template" do
     pending
     get :index
     response.should render_template(:index)
-  end
-  
-  it "show action should render show template" do
-    get :show, :id => Child.first
-    response.should render_template(:show)
   end
   
 
