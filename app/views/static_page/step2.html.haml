@@ -1,0 +1,39 @@
+#step2
+  = render :partial => 'shared/steps'
+  .first
+    %h2 Your sponsorships
+    %p Child sponsorship is only €30 a month. That's about €1 a day to change a life.
+    
+    %ul
+      %li#image 
+        = image_tag "kid.png", :alt => "Child"
+      %li 
+        %h2 Akash
+        %h4 child sponsorship
+      %li
+        %input{:type=>"radio"}
+        %label €30 monthly
+        %br
+        %input{:type=>"radio"}
+        %label €90 quarterly
+        %br
+        %input{:type=>"radio"}
+        %label €180 half-yearly
+        %br
+        %input{:type=>"radio"}
+        %label €360 yearly
+        
+  .second
+    .container
+      %h2 Other sponsorships
+      %p Manage your sponsorships
+  
+  .full
+    .third.alpha
+      %h6 Benefits of sponsorship
+
+    .third
+      %h6 Sponsor for a year & receive regular updates
+
+    .third.omega
+      %h6 Testimonial
