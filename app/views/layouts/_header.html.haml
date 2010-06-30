@@ -10,7 +10,10 @@
     #main_nav
       %ul
         %li#child
-          = link_to "sponsor a child", child_path(@random_child), :class => 'active'
+          - if @random_child
+            = link_to "sponsor a child", child_path(@random_child)
+          - else
+            = link_to "sponsor a child", root_path
         %li#work
           = link_to "support our work"
         %li#schools

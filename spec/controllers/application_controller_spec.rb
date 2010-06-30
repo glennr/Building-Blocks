@@ -11,6 +11,15 @@ describe ApplicationController do
     ActionController::Routing::Routes.draw do |map|
       map.resources :foo
     end
+   
+  end
+  
+  context "find a random child" do
+    it "use a before filter" do
+      ApplicationController.before_filters.should include(:find_random_child)
+      Child.should_receive(:find).and_return @random_child
+      get :index
+    end
   end
   
   context "minify HTML" do

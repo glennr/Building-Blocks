@@ -9,4 +9,5 @@ Scenario: "Select a child"
       | Vijay      | Soccer, cricket | M      | 3_YEARS_AGO |
   When I go to the child details page for "Vijay"
   And I press "Sponsor Now"
-  Then I should see "Your Sponsorships"
+  Then I should be on the sponsorship listing page
+  And I should see "Your Sponsorships"

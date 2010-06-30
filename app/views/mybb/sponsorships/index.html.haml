@@ -1,9 +1,9 @@
 %h1.heading
-  = "Sponsorships"
-  
+  = "Your Sponsorships"
+
 %p.actions
   = link_to 'New Sponsorship', new_resource_path
-  
+
 %table
   %thead.header
     %tr
@@ -14,5 +14,5 @@
   %tbody.items.resources
     - collection.each do |resource|
       = render 'item', :resource => resource
-      
+
 = will_paginate(collection)
