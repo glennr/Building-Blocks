@@ -2,10 +2,6 @@
   = "Your Sponsorships"
 
 %table
-  %thead.header
-    %tr
-      %th.child_id= 'Child'
-      %th.actions= 'Actions'
   %tbody.items.resources
     - collection.each do |resource|
       = render 'item', :resource => resource
