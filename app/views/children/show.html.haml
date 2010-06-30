@@ -12,7 +12,7 @@
           %li 4. Confirm
           %li.last 5. Done!
       #main
-        = image_tag "image2.jpg", :alt => "Child"
+        = image_tag "http://lh5.ggpht.com/_c3FwZWa0OCQ/SHnTUJCr-AI/AAAAAAAAHH0/11oGIr93KpM/s228-c/skippy1.JPG", :alt => "Child"
         .text
           %h1= "Sponsor #{@child.first_name}"
           %dl
@@ -23,7 +23,7 @@
             %dt Likes:
             %dd= @child.likes
           %p For about 1 euro, you can transform a child's life by providing basic necessities like education, food, and the chance to help them get proper education.
-          - semantic_form_for(Sponsorship.new(:child => @child), :url => mybb_sponsorships_path) do |form|
+          - semantic_form_for(Sponsorship.new(:child_id => @child.id), :url => mybb_sponsorships_path) do |form|
             - form.buttons do
               = form.commit_button 'Sponsor Now'
 
@@ -35,7 +35,7 @@
             %li age
             %li#search search
         .form2
-          %h6 More children like Akash
+          %h6== More children like #{@child.first_name}
           %ul
             %li
               = image_tag "image1.jpg", :alt => "Child"

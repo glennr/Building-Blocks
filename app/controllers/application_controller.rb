@@ -9,8 +9,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   filter_parameter_logging :password, :password_confirmation, :credit_card_number
 
+  before_filter :find_random_child
+
   before_filter :set_default_html_meta_tags
   after_filter :minify_html
+
+  protected
+
+  def find_random_child
+    @random_child = Child.find :first, :offset => ( Child.count * rand ).to_i #random
+  end
 
   def set_default_html_meta_tags
     @meta_description = APP_CONFIG[:meta][:description]

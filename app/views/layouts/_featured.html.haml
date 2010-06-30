@@ -11,12 +11,12 @@
         %li#search search
 
     #meet.featured
-      - if @child
+      - if @random_child
         #info
-          %h2= link_to "Meet #{@child.first_name}", child_path(@child), :id => "sponsor_now"
-          %p== #{he_she?(@child.gender)}'s a #{age(@child.birthday)} year old #{boy_girl?(@child.gender)} who likes #{shorten_likes(@child.likes)}
+          %h2= link_to "Meet #{@random_child.first_name}", child_path(@random_child), :id => "sponsor_now"
+          %p== #{he_she?(@random_child.gender)}'s a #{age(@random_child.birthday)} year old #{boy_girl?(@random_child.gender)} who likes #{shorten_likes(@random_child.likes)}
         #image
-          = image_tag "kid.png", :alt => "Featured child"
+          = link_to image_tag("http://lh5.ggpht.com/_c3FwZWa0OCQ/SHnTUJCr-AI/AAAAAAAAHH0/11oGIr93KpM/s154-c/skippy1.JPG", :alt => "Featured child"), child_path(@random_child)
       - else
         %p There are no children defined yet
 

@@ -1,16 +1,17 @@
 #header
   .wrapper
-  
+
     #logo
-      = image_tag "logo.png", :alt => "Building BLocks Logo"
-  
+      = link_to image_tag("logo.png", :alt => "Building Blocks logo"), root_path
+
     #user_nav
       %ul
         %li log in
-    
+
     #main_nav
       %ul
-        %li#child support a child
+        %li#child
+          = link_to "sponsor a child", child_path(@random_child), :class => 'active'
         %li#work support our work
         %li#schools our schools
         %li#about about us

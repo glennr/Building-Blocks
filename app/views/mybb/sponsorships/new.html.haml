@@ -1,7 +1,7 @@
 %h1.heading
   = 'New Sponsorship'
 
-- semantic_form_for(resource, :url => mybb_sponsorships_path(resource)) do |form|
+- semantic_form_for(resource, :url => mybb_sponsorships_path(resource.id)) do |form|
   = render 'form', :form => form
   - form.buttons do
     = form.commit_button 'Create'

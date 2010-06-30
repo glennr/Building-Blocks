@@ -18,6 +18,11 @@ module NavigationHelpers
       @child = Child.find_by_first_name($1)
       child_path(@child)
 
+    when /the edit sponsorship page$/
+      edit_mybb_sponsorship_path(@sponsorship)
+
+
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

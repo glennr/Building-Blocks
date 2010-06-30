@@ -1,7 +1,7 @@
 class Mybb::SponsorshipsController < InheritedResources::Base
 
   #actions :index, :show, :new, :edit, :create, :update, :destroy
-  actions :create, :edit
+  actions :new, :create, :edit
   respond_to :html, :js, :xml, :json
 
   protected
