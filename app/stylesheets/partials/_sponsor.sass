@@ -22,7 +22,6 @@
     img
       padding: 35px 29px
       float: left
-    p
       
     .text
       margin: 75px 0 0 300px
@@ -37,6 +36,10 @@
         color= !yellow
         +rounded(6px)
         font-size: 1.1em
+        &:hover
+          color= !white
+          background: #111
+          text-decoration: none
         
   #sidebar
     .form1
@@ -65,11 +68,15 @@
           letter-spacing: 0.02em
           line-height: 1.2em
           font-size: 1em
+          &:hover
+            color= !black
         
-
           &#search
             background= image_url("button2.png") "no-repeat center"
             color= !yellow
+            &:hover
+              color= !white
+            
     .form2
       background= image_url("form2.png") "no-repeat top center"
       padding: 20px
@@ -80,20 +87,29 @@
         li
           display: inline
           float: left
-
           list-style-type: none 
           margin: 0
           background= image_url("thumb.png") "no-repeat top left"
           width: 125px
+          &:hover
+            text-decoration: underline
           img
             padding: 12px
             float: left
-            
+          .title
+            font-size: 0.9em
+            font-weight: bold
+            padding-top: 15px
+            text-transform: uppercase
+          .desc
+            font-size: 0.9em
+            color: #666
+            line-height: 1em
   .full
-    margin-bottom: 30px
+    margin-bottom: 50px
     .third
       background= image_url("header.png") "no-repeat top center"
       h6
-        padding: 50px 20px
-    .third
-    .third
+        padding: 50px 10px 20px 20px
+      p
+        padding: 0 10px 10px 20px
