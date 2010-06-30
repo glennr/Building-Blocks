@@ -4,6 +4,9 @@
 %table
   %tbody.items.resources
     - collection.each do |resource|
-      = render 'item', :resource => resource
+      - if resource == collection.first
+        = render 'item_featured', :resource => resource
+      - else
+        = render 'item', :resource => resource
 
 = will_paginate(collection)
