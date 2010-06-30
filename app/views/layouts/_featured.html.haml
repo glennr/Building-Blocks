@@ -16,7 +16,7 @@
           %h2= link_to "Meet #{@child.first_name}", child_path(@child), :id => "sponsor_now"
           %p== #{he_she?(@child.gender)}'s a 3 year old #{boy_girl?(@child.gender)} who likes #{shorten_likes(@child.likes)}
         #image
-          = image_tag "kid.png", :alt => "Featured child"
+          = link_to image_tag("kid.png", :alt => "Featured child"), child_path(@child)
       - else
         %p There are no children defined yet
 

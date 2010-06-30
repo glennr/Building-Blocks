@@ -10,7 +10,11 @@
     
     #main_nav
       %ul
-        %li#child support a child
-        %li#work support our work
-        %li#schools our schools
-        %li#about about us
+        %li#child
+          = link_to "sponsor a child", child_path(@child), :class => 'active'
+        %li#work
+          = link_to "support our work"
+        %li#schools
+          = link_to "our schools"
+        %li#about
+          = link_to "about us"

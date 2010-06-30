@@ -23,18 +23,19 @@
     margin: 35px 0 0 0
     padding: 0
     li
-      display: block
-      height: 86px
-      +replace-text("nav.png", 0, 0)
+      a
+        display: block
+        height: 86px
+        +replace-text("nav.png", 0, 0)
 
-      &#child
+      &#child a
         +hover-sprite( 120px, 0, 0, -80px )
 
-      &#work
+      &#work a
         +hover-sprite( 150px, -120px, 0, -80px )
 
-      &#schools
+      &#schools a
         +hover-sprite( 110px, -270px, 0, -80px )  
       
-      &#about
-        +hover-sprite( 70px, -380px, 0, -80px )
+      &#about a
+        +hover-sprite( 75px, -380px, 0, -80px )
