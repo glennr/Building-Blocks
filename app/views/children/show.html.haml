@@ -4,13 +4,7 @@
     = render :partial => 'layouts/flashes'
 
     #step1
-      .steps
-        %ul
-          %li.active 1. Select a child
-          %li 2. Your details
-          %li 3. Choose payment
-          %li 4. Confirm
-          %li.last 5. Done!
+      = render :partial => 'shared/steps'
       #main
         = image_tag "http://lh5.ggpht.com/_c3FwZWa0OCQ/SHnTUJCr-AI/AAAAAAAAHH0/11oGIr93KpM/s228-c/skippy1.JPG", :alt => "Child"
         .text
@@ -65,8 +59,10 @@
 
           %p What you receive
           %p You will receive ...
+          
         .third
           %h6 Payment options
+          
         .third.omega
           %h6 Testimonial
 
