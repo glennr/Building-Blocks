@@ -1,76 +1,63 @@
-= render :partial => 'layouts/header'
-#content
-  .wrapper
-    = render :partial => 'layouts/flashes'
+#step1
+  = render :partial => 'shared/steps'
+  #main
+    = image_tag "http://lh5.ggpht.com/_c3FwZWa0OCQ/SHnTUJCr-AI/AAAAAAAAHH0/11oGIr93KpM/s228-c/skippy1.JPG", :alt => "Child"
+    .text
+      %h1= "Sponsor #{@child.first_name}"
+      %dl
+        %dt Age:
+        %dd= age(@child.birthday)
+        %dt Gender:
+        %dd= boy_girl?(@child.gender)
+        %dt Likes:
+        %dd= @child.likes
+      %p= "For about 1 euro, you can transform a child's life by providing basic necessities like education, food, and the chance to help them get proper education."
+      - semantic_form_for(Sponsorship.new(:child => @child), :url => mybb_sponsorships_path) do |form|
+        = form.hidden_field :child_id
+        - form.buttons do
+          = form.commit_button 'Sponsor Now'
 
-    #step1
-      = render :partial => 'shared/steps'
-      #main
-        = image_tag "http://lh5.ggpht.com/_c3FwZWa0OCQ/SHnTUJCr-AI/AAAAAAAAHH0/11oGIr93KpM/s228-c/skippy1.JPG", :alt => "Child"
-        .text
-          %h1= "Sponsor #{@child.first_name}"
-          %dl
-            %dt Age:
-            %dd= age(@child.birthday)
-            %dt Gender:
-            %dd= boy_girl?(@child.gender)
-            %dt Likes:
-            %dd= @child.likes
-          %p For about 1 euro, you can transform a child's life by providing basic necessities like education, food, and the chance to help them get proper education.
-          - semantic_form_for(Sponsorship.new(:child => @child), :url => mybb_sponsorships_path) do |form|
-            = form.hidden_field :child_id
-            - form.buttons do
-              = form.commit_button 'Sponsor Now'
+  #sidebar
+    .form1
+      %h6 Start a new search
+      %ul
+        %li boy/girl
+        %li age
+        %li#search search
+    .form2
+      %h6== More children like #{@child.first_name}
+      %ul
+        %li
+          = image_tag "image1.jpg", :alt => "Child"
+          %p.title Akash
+          %p.desc 3 years old boy
+        %li
+          = image_tag "image1.jpg", :alt => "Child"
+          %p.title Akash
+          %p.desc 3 years old boy
+        %li
+          = image_tag "image1.jpg", :alt => "Child"
+          %p.title Akash
+          %p.desc 3 years old boy
+        %li
+          = image_tag "image1.jpg", :alt => "Child"
+          %p.title Akash
+          %p.desc 3 years old boy
 
-      #sidebar
-        .form1
-          %h6 Start a new search
-          %ul
-            %li boy/girl
-            %li age
-            %li#search search
-        .form2
-          %h6== More children like #{@child.first_name}
-          %ul
-            %li
-              = image_tag "image1.jpg", :alt => "Child"
-              %p.title Akash
-              %p.desc 3 years old boy
-            %li
-              = image_tag "image1.jpg", :alt => "Child"
-              %p.title Akash
-              %p.desc 3 years old boy
-            %li
-              = image_tag "image1.jpg", :alt => "Child"
-              %p.title Akash
-              %p.desc 3 years old boy
-            %li
-              = image_tag "image1.jpg", :alt => "Child"
-              %p.title Akash
-              %p.desc 3 years old boy
+  .full
+    .third.alpha
+      %h6 Child sponsorship
+      %p Sponsor a child for EUR30 a month
+      %p Choose from ... asdf asf sad fsd fasd fsda fads fsda fs dafs adf asd fds a fsdf
 
-      .full
-        .third.alpha
-          %h6 Child sponsorship
-          %p Sponsor a child for EUR30 a month
-          %p Choose from ... asdf asf sad fsd fasd fsda fads fsda fs dafs adf asd fds a fsdf
+      %p Connect MyBB
+      %p Sign up online to instantly engage with your sponsored child in MyBB.
 
-          %p Connect MyBB
-          %p Sign up online to instantly engage with your sponsored child in MyBB.
+      %p What you receive
+      %p You will receive ...
 
-          %p What you receive
-          %p You will receive ...
+    .third
+      %h6 Payment options
 
-        .third
-          %h6 Payment options
-
-        .third.omega
-          %h6 Testimonial
-
-= render :partial => 'layouts/footer'
-
-- content_tag_for(:dl, resource) do
-  %p.actions
-    = link_to 'Edit', edit_resource_path(resource)
-  |
-  = link_to 'Index', collection_path
+    .third.omega
+      %h6 Testimonial
