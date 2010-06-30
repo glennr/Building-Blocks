@@ -1,15 +1,10 @@
 %h1.heading
   = "Your Sponsorships"
 
-%p.actions
-  = link_to 'New Sponsorship', new_resource_path
-
 %table
   %thead.header
     %tr
       %th.child_id= 'Child'
-      %th.user_id= 'User'
-      %th.purchase_id= 'Purchase'
       %th.actions= 'Actions'
   %tbody.items.resources
     - collection.each do |resource|

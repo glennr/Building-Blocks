@@ -21,8 +21,6 @@ module NavigationHelpers
     when /the sponsorship listing page$/
       mybb_sponsorships_path()
 
-
-
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
