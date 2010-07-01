@@ -41,6 +41,7 @@ Rails::Initializer.run do |config|
   config.gem 'hoptoad_notifier'
 
   config.gem "factory_girl",     :lib => false, :version => '= 1.2.4'
+  config.gem 'faker',            :lib => false
 
   config.time_zone = 'UTC'
 
