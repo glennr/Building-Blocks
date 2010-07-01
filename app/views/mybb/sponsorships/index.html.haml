@@ -1,12 +1,15 @@
-%h1.heading
-  = "Your Sponsorships"
+#main
+  %h1.heading
+    = "Your Sponsorships"
 
-%table
-  %tbody.items.resources
-    - collection.each do |resource|
-      - if resource == collection.first
-        = render 'item_featured', :resource => resource
-      - else
-        = render 'item', :resource => resource
+  %table
+    %tbody.items.resources
+      - collection.each do |resource|
+        - if resource == collection.first
+          = render 'item_featured', :resource => resource
+        - else
+          = render 'item', :resource => resource
 
-= will_paginate(collection)
+  = will_paginate(collection)
+
+#sidebar
