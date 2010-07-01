@@ -5,9 +5,6 @@
 #Dont forget to run the heroku config loader first: rake heroku:vars:load 
 --- 
 :production: 
-  :site_name: <%= ENV['SITE_NAME'] %>
-  :hoptoad: 
-    :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
   :action_controller: 
     :session: 
       :key: <%= ENV['ACTION_CONTROLLER__SESSION__KEY'] %>
@@ -15,6 +12,10 @@
   :site_description: <%= ENV['SITE_DESCRIPTION'] %>
   :site: 
     :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
+  :google: 
+    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
+    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
+    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
   :action_mailer: 
     :smtp_settings: 
       :authentication: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__AUTHENTICATION'] %>
@@ -25,15 +26,14 @@
       :port: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PORT'] %>
       :password: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PASSWORD'] %>
     :delivery_method: <%= ENV['ACTION_MAILER__DELIVERY_METHOD'] %>
-  :google: 
-    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
-    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
-    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
   :meta: 
     :description: <%= ENV['META__DESCRIPTION'] %>
     :keywords: <%= ENV['META__KEYWORDS'] %>
+  :hoptoad: 
+    :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
   google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
   :default_host: <%= ENV['DEFAULT_HOST'] %>
   :gateway: 
-    :password: <%= ENV['GATEWAY__PASSWORD'] %>
     :login: <%= ENV['GATEWAY__LOGIN'] %>
+    :password: <%= ENV['GATEWAY__PASSWORD'] %>
+  :site_name: <%= ENV['SITE_NAME'] %>

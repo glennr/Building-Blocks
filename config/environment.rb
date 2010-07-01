@@ -37,6 +37,7 @@ Rails::Initializer.run do |config|
   config.gem 'dry_scaffold', :lib => false
   config.gem 'responders', :version => '= 0.4.5'
   config.gem 'inherited_resources', :version => '=1.0.6'
+  config.gem 'hoptoad_notifier'
 
   config.time_zone = 'UTC'
 
