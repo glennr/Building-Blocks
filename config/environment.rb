@@ -40,6 +40,8 @@ Rails::Initializer.run do |config|
   config.gem 'inherited_resources', :version => '=1.0.6'
   config.gem 'hoptoad_notifier'
 
+  config.gem "factory_girl",     :lib => false, :version => '= 1.2.4'
+
   config.time_zone = 'UTC'
 
   DEFAULT_KEY = '_yourapp_session'
