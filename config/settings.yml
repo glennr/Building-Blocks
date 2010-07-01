@@ -5,35 +5,35 @@
 #Dont forget to run the heroku config loader first: rake heroku:vars:load 
 --- 
 :production: 
+  :site_name: <%= ENV['SITE_NAME'] %>
+  :hoptoad: 
+    :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
   :action_controller: 
     :session: 
       :key: <%= ENV['ACTION_CONTROLLER__SESSION__KEY'] %>
       :secret: <%= ENV['ACTION_CONTROLLER__SESSION__SECRET'] %>
+  :site_description: <%= ENV['SITE_DESCRIPTION'] %>
   :site: 
     :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
-  :google: 
-    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
-    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
-    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
-  :meta: 
-    :keywords: <%= ENV['META__KEYWORDS'] %>
-    :description: <%= ENV['META__DESCRIPTION'] %>
   :action_mailer: 
     :smtp_settings: 
-      :user_name: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__USER_NAME'] %>
+      :authentication: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__AUTHENTICATION'] %>
       :domain: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__DOMAIN'] %>
+      :user_name: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__USER_NAME'] %>
       :perform_deliveries: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PERFORM_DELIVERIES'] %>
       :address: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__ADDRESS'] %>
       :port: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PORT'] %>
       :password: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PASSWORD'] %>
-      :authentication: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__AUTHENTICATION'] %>
     :delivery_method: <%= ENV['ACTION_MAILER__DELIVERY_METHOD'] %>
+  :google: 
+    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
+    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
+    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
+  :meta: 
+    :description: <%= ENV['META__DESCRIPTION'] %>
+    :keywords: <%= ENV['META__KEYWORDS'] %>
+  google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
   :default_host: <%= ENV['DEFAULT_HOST'] %>
   :gateway: 
-    :login: <%= ENV['GATEWAY__LOGIN'] %>
     :password: <%= ENV['GATEWAY__PASSWORD'] %>
-  google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
-  :site_name: <%= ENV['SITE_NAME'] %>
-  :hoptoad: 
-    :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
-  :site_description: <%= ENV['SITE_DESCRIPTION'] %>
+    :login: <%= ENV['GATEWAY__LOGIN'] %>
