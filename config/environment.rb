@@ -23,7 +23,6 @@ Rails::Initializer.run do |config|
   config.gem 'paperclip'
   config.gem "rcov"
   config.gem 'google_analytics', :lib => 'rubaidh/google_analytics'
-  #config.gem 'heroku_san'
   #config.gem 'rakeist'
 
   # inherited resources for Rails 2.3

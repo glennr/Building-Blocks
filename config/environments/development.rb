@@ -1,4 +1,4 @@
-# Settings specified here will take precedence over those in config/environment.rb
+config.gem 'heroku_san', :lib => 'false'
 
 config.gem "rspec", :version => "1.3.0", :lib => false
 config.gem "rspec-rails", :version => "1.3.2", :lib => false
@@ -35,4 +35,3 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors           = false
-
