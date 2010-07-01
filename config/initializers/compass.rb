@@ -1,5 +1,7 @@
-require 'compass'
-rails_root = (defined?(Rails) ? Rails.root : RAILS_ROOT).to_s
-Compass.add_project_configuration(File.join(rails_root, "config", "compass.rb"))
+Compass.add_project_configuration(File.join(RAILS_ROOT, "config", "compass.rb"))
+Compass.configuration.environment = RAILS_ENV.to_sym
 Compass.configure_sass_plugin!
-Compass.handle_configuration_change!
+
+require "fileutils"
+FileUtils.mkdir_p(Rails.root.join("tmp", "stylesheets", "compiled"))
+ActionController::Dispatcher.middleware.use(Rack::Static, :root => "tmp/", :urls => ["/stylesheets/compiled"])
