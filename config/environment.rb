@@ -13,7 +13,8 @@ if File.exist?(config_file_path)
   if config
     APP_CONFIG = config.has_key?(RAILS_ENV.to_sym) ? config[RAILS_ENV.to_sym] : {}
   else
-    puts "WARNING: config file #{config_file_path} is not valid"
+    puts "ERROR: config file #{config_file_path} is not valid"
+    exit 1
   end
 else
   puts "ERROR: configuration file #{config_file_path} not found."

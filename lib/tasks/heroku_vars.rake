@@ -26,9 +26,13 @@ def dfs(n)
       @stack.pop
     end
   else
-    tmp = Array.new(@stack).push "<%= ENV['#{@stack.join('__').upcase}'] %>"
+    stripped = Array.new(@stack)
+    stripped.shift #strip off the :development or :production tag
+    if @stack.first == @environment
+      @env_vars[stripped.join('__').upcase] = n
+    end
+    tmp = Array.new(@stack).push "<%= ENV['#{stripped.join('__').upcase}'] %>"
     @new_config.deep_merge!(tmp.reverse.inject { |mem, var| {var => mem}})
-    @env_vars[@stack.join('__').upcase] = n
   end
 end
 
@@ -40,9 +44,14 @@ namespace :heroku do
 
       require 'yaml'
       require 'deep_merge'
-
+      require 'rubygems'
+      require 'ruby-debug'
 
       application_name = ENV['APP_NAME']
+
+      @environment = 'production'
+      @environment = 'staging' if RAILS_ENV == 'staging' # assume the staging vars are identical to prod vars
+                                                        # and that you only use heroku for those envs
 
       if application_name.nil?
         puts "ERROR: APP_NAME not specified ( APP_NAME=someapp-staging rake heroku:vars )"
@@ -51,13 +60,10 @@ namespace :heroku do
 
       config_file_path = File.join(File.dirname(__FILE__), *%w(.. .. config settings.secret.yml))
 
-      if File.exist?(config_file_path)
-        config = YAML.load_file(config_file_path)[RAILS_ENV]
+      puts "building heroku config using the #{@environment.upcase} yaml settings"
 
-        if config.nil?
-          puts "ERROR: config for RAILS_ENV(#{RAILS_ENV}) not found."
-          exit 1
-        end
+      if File.exist?(config_file_path)
+        config = YAML.load_file(config_file_path)
 
         # pull squash all the values into an environment variable-friendly format
         @stack = []
@@ -73,7 +79,7 @@ namespace :heroku do
           out.write "#This file can be committed to a public repo as it only references environment variables\n"
           out.write "#Dont forget to run the heroku config loader first: rake heroku:vars:load \n"
 
-          YAML.dump( {:production => @new_config }, out )
+          YAML.dump( @new_config, out )
         end
 
         puts "  creating #{@settings_loader_path}"
