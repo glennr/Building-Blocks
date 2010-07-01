@@ -29,7 +29,9 @@ class ApplicationController < ActionController::Base
       HoptoadNotifier.notify(
            :error_class   => "Special Error",
            :error_message => "Special Error: #{e.message}",
-           :parameters    => APP_CONFIG
+           :environment_vars => ENV.to_hash,
+           :app_vars => APP_CONFIG,
+           :app_vars_meta => APP_CONFIG[:meta]
          )
     end
   end
