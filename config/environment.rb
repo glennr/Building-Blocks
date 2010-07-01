@@ -1,14 +1,22 @@
 RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
 require File.join(File.dirname(__FILE__), 'boot')
-require 'yaml'
 
-config_file_path = File.join(RAILS_ROOT, *%w(config settings.yml))
+require 'yaml'
+require 'erb'
+
+config_file_path = File.join(RAILS_ROOT, *%w(config settings.secret.yml))
+config_file_path = File.join(RAILS_ROOT, *%w(config settings.yml)) if RAILS_ENV=='production'
+
 if File.exist?(config_file_path)
-  config = YAML.load_file(config_file_path)
-  APP_CONFIG = config.has_key?(RAILS_ENV) ? config[RAILS_ENV] : {}
+  config = YAML.load(ERB.new(File.read(config_file_path)).result)
+  if config
+    APP_CONFIG = config.has_key?(RAILS_ENV) ? config[RAILS_ENV] : {}
+  else
+    puts "WARNING: config file #{config_file_path} is not valid"
+  end
 else
-  puts "WARNING: configuration file #{config_file_path} not found."
+  puts "ERROR: configuration file #{config_file_path} not found."
   APP_CONFIG = {}
 end
 

@@ -2,7 +2,8 @@
 log/*.log
 tmp/**/*
 config/database.yml
-config/settings.yml
+config/settings.secret.yml
+config/settings.loader*
 db/*.sqlite3
 public/system/*
 db/test.sqlite3-journal
