@@ -21,19 +21,9 @@ class ApplicationController < ActionController::Base
   end
 
   def set_default_html_meta_tags
-    begin
-      @meta_description = APP_CONFIG[:meta][:description]
-      @meta_keywords = APP_CONFIG[:meta][:keywords]
-      @google_site_verification_key = APP_CONFIG[:google][:verification_code]
-    rescue => e
-      HoptoadNotifier.notify(
-           :error_class   => "Special Error",
-           :error_message => "Special Error: #{e.message}",
-           :environment_vars => ENV.to_hash,
-           :app_vars => APP_CONFIG,
-           :app_vars_meta => APP_CONFIG[:meta]
-         )
-    end
+    @meta_description = APP_CONFIG[:meta][:description]
+    @meta_keywords = APP_CONFIG[:meta][:keywords]
+    @google_site_verification_key = APP_CONFIG[:google][:verification_code]
   end
 
   def html_meta_tags(meta_description = APP_CONFIG[:meta][:description], meta_keywords = APP_CONFIG[:meta][:keywords])

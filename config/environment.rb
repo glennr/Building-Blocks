@@ -10,11 +10,11 @@ config_file_path = File.join(RAILS_ROOT, *%w(config settings.yml)) if ['producti
 
 if File.exist?(config_file_path)
   config = YAML.load(ERB.new(File.read(config_file_path)).result)
-  if config
-    APP_CONFIG = config.has_key?(RAILS_ENV.to_sym) ? config[RAILS_ENV.to_sym] : {}
+  if config && config.has_key?(RAILS_ENV)
+    APP_CONFIG = config.has_key?(RAILS_ENV) ? config[RAILS_ENV] : {}
   else
     puts "ERROR: config file #{config_file_path} is not valid"
-    exit 1
+    APP_CONFIG = {}
   end
 else
   puts "ERROR: configuration file #{config_file_path} not found."
