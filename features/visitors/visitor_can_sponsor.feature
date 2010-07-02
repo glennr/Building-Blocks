@@ -11,4 +11,3 @@ Scenario: "Select a child"
   And I press "Sponsor Now"
   Then I should be on the sponsorship listing page
   And I should see "Your Sponsorships"
-  And I should see "You will be able to view his photos and full profile when you complete the sign-up process."

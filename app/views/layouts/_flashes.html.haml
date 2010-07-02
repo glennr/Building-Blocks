@@ -1,4 +1,4 @@
-- flash.each do |key, value|
-  #flashes{:id => key.to_s}
-    = h value
-    .wrapper
+#flashes
+  - flash.each do |key, value|
+    %div{:id => key.to_s}
+      = h value
