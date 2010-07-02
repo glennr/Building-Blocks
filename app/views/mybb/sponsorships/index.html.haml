@@ -1,15 +1,80 @@
-#main
-  %h1.heading
-    = "Your Sponsorships"
+#step2
+  = render :partial => 'shared/steps'
+  #main
+    %h2
+      = "Your Sponsorships"
+    %p Child sponsorship is only €30 a month. That's about €1 a day to change a life.
 
-  %table
-    %tbody.items.resources
-      - collection.each do |resource|
-        - if resource == collection.first
-          = render 'item_featured', :resource => resource
-        - else
-          = render 'item', :resource => resource
 
-  = will_paginate(collection)
+    %table
+      %tbody.items.resources
+        - collection.each do |resource|
+          - if resource == collection.first
+            = render 'item_featured', :resource => resource
+          - else
+            = render 'item', :resource => resource
 
-#sidebar
+    = will_paginate(collection)
+    .total
+      %h4.left You need to pay
+      %h4.right €390
+      .left
+        %h6 Pay with PayPal
+        %p Use PayPal to fund a donation with money in your PayPal account, or to pay with a credit card.
+      .right
+        - semantic_form_for(Sponsorship.new(:child => @child), :url => mybb_sponsorships_path) do |form|
+          = form.hidden_field :child_id
+          - form.buttons do
+            = form.commit_button 'Sponsor Now'
+
+  #sidebar
+    .title
+      %h2 Give even more
+      %p One extra line to describe the options
+      
+    .third
+      .top
+        %h6 Sponsor another child
+        = image_tag "image1.jpg", :alt => "Child"
+        %p Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. 
+        %a READ MORE
+      .bottom
+        .right
+          %button Sponsor now
+          %p for another $30
+      
+    .third
+      .top
+        %h6 Sponsor another child
+        = image_tag "image1.jpg", :alt => "Child"
+        %p Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. 
+        %a READ MORE
+      .bottom
+        .right
+          %button Sponsor now
+          %p donate $30
+
+    .third
+      .top
+        %h6 Sponsor another child
+        = image_tag "image1.jpg", :alt => "Child"
+        %p Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. 
+        %a READ MORE
+      .bottom
+        .right
+          %button Sponsor now
+          %p give $30
+
+    .third
+      .top
+        %h6 Sponsor another child
+        = image_tag "image1.jpg", :alt => "Child"
+        %p Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. 
+        %a READ MORE
+      .bottom
+        .left
+          %input
+          %p choose your amount
+        .right
+          %button Sponsor now
+          %p for another $30

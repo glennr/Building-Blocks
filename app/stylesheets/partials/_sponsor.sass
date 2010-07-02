@@ -23,43 +23,30 @@
     img
       padding: 35px 29px
       float: left
-
-#step1, #step2
-  #main, .first-half
-    margin-bottom: 20px
-    .text
-      margin: 75px 0 0 300px
-      .short
-        padding: 10px 0
-        width: 150px
-      a
+      
+    dl
+      margin-top: 15px
+      dt
         float: left
-        margin: 20px 0
-        padding: 6px 35px
-        background: #333
-        color= !yellow
-        +rounded(6px)
-        font-size: 1.1em
-        &:hover
-          color= !white
-          background: #111
-          text-decoration: none
-    ul
-      +horizontal-list
-      background= image_url("child2.png") "no-repeat"
-      float: left
-      margin: 30px 0
-      padding: 28px 0 0 22px
-      min-height: 200px
-      li
-        padding-bottom: 20px
-        width: 180px
-        color: #666
-        &#image
-
-          
-          
+        padding-right: 5px
+        color: #888
+      
+    #sponsorship_submit
+      background: #333
+      border: none
+      color= !yellow
+      font-size: 1.1em
+      margin-top: 20px
+      padding: 7px 20px
+      cursor: pointer
+      +rounded
+      &:hover
+        background: #222
+        color= !white
         
+    #sponsorship_submit, dl
+      font-family: Palatino, Georgia, "Times New Roman", Times, serif
+      
   #sidebar
     .form1
       background= image_url("form1.png") "no-repeat top center"
@@ -67,11 +54,11 @@
       height: 78px
       margin-bottom: 10px
       padding: 50px 0 0 10px
-      
+
       h6
         padding-left: 5px
         margin-bottom: 7px
-    
+
       ul
         +horizontal-list
 
@@ -89,13 +76,13 @@
           font-size: 1em
           &:hover
             color= !black
-        
+
           &#search
             background= image_url("button2.png") "no-repeat center"
             color= !yellow
             &:hover
               color= !white
-            
+
     .form2
       background= image_url("form2.png") "no-repeat top center"
       padding: 20px
@@ -124,15 +111,8 @@
             font-size: 0.9em
             color: #666
             line-height: 1em
-  .full
-    margin-bottom: 50px
-  .third
-    background= image_url("header.png") "no-repeat top center"
-    h6
-      padding: 50px 10px 20px 20px
-    p
-      padding: 0 10px 10px 20px
-      
+
+
   .second-half
     .container
       margin-left: 100px
@@ -148,5 +128,152 @@
         li
           &.thumb
           width: 100px
+
+
+
+#step1, #step2
+  #main
+    margin-bottom: 30px
+    .text
+      margin: 75px 0 0 300px
+      .short
+        padding: 10px 0
+        width: 150px
+      a
+        float: left
+        margin: 20px 0
+        padding: 6px 35px
+        background: #333
+        color= !yellow
+        +rounded(6px)
+        font-size: 1.1em
+        &:hover
+          color= !white
+          background: #111
+          text-decoration: none
+    table
+      tr
+        background= image_url("divider.png") "no-repeat top"
+        color: #666
+        float: left
+        padding: 30px 15px 15px 15px
+        &.even, &.odd
+          background= image_url("child3.png") "no-repeat left top"
+          border-top: 1px #eee solid
+        &:hover
+          background-color: #fafafa
         
+        td
+          float: left
+          margin-right: 20px
+          .child_name
+            color= !blue
+            font-size: 1.5em
+            font-weight: bold
+            letter-spacing: 0.03em
+            text-transform: none
+            padding-top: 15px
+          .type
+            color= !yellow
+            font-family: Palatino, Georgia, "Times New Roman", Times, serif
+          &.cost
+            margin-top: 15px
+            margin-left: 10px
+            padding-left: 10px
+            background= image_url("divider2.png") "no-repeat"
+            p
+              width: 150px
+              padding: 0 0 10px 5px
+              color: #666
+          &.actions
+            padding: 75px 0 0 10px
+            a
+              color= !blue
+        &.first
+          background= image_url("child2.png") "no-repeat" 
+          margin: 10px 0
+          padding: 28px 0 20px 22px
+          img
+            padding-right: 10px
+          .child_name
+            font-size: 2em
+            font-weight: bold
+          .type
+            font-size: 1.2em
+          .actions
+            padding-top: 45px
+            a
+              color= !blue
+    .total
+      background= image_url("divider.png") "no-repeat top"
+      float: left
+      padding-top: 20px
+      margin-bottom: 20px
+      .left
+        h6
+          margin-top: 20px
+        p
+          width: 450px
           
+      #sponsorship_submit
+        background: #333
+        border: none
+        color= !yellow
+        font-family: Palatino, Georgia, "Times New Roman", Times, serif
+        font-size: 1.1em
+        margin-top: 35px
+        padding: 7px 20px
+        cursor: pointer
+        +rounded
+        &:hover
+          background: #222
+          color= !white
+        
+  .full
+    margin-bottom: 50px
+    
+#step2
+  #sidebar
+    .title
+      padding: 0 0 15px 15px
+  .third
+    .top
+      background= image_url("form2.png") "no-repeat top center"
+      h6
+        padding: 20px 10px 10px 20px
+      p
+        font-size: 0.9em
+        line-height: 1em
+        padding-right: 10px
+      img
+        float: left
+        padding: 0 10px 0 20px
+      a
+        color= !yellow
+        font-size: 0.8em
+      
+    .bottom
+      background= image_url("form2.png") "no-repeat bottom center"
+      min-height: 55px
+      padding-top: 10px
+      .left
+        padding-left: 20px
+      .right
+        padding-right: 20px
+        p
+          padding-left: 12px
+      p
+        font-size: 0.6em
+        text-transform: uppercase
+      input
+        margin-top: 1px
+        height: 20px
+        width: 90px
+        border: 1px #999 solid
+        +rounded
+      button
+        background: #333
+        border: none
+        color= !yellow
+        padding: 5px 10px
+        +rounded
