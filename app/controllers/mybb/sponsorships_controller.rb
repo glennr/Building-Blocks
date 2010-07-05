@@ -4,11 +4,6 @@ class Mybb::SponsorshipsController < InheritedResources::Base
   actions :create, :index
   respond_to :html, :js, :xml, :json
 
-  def create
-    create! (:notice => "You will be able to view his photos and full profile when you complete the sign-up process.") { mybb_sponsorships_url } #redirect to index action
-  end
-
-
   protected
 
   def collection
