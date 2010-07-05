@@ -1,7 +1,7 @@
 #step1
   = render :partial => 'shared/steps'
   #main
-    = image_tag "http://lh5.ggpht.com/_5DiaTtm-F9c/SgVMOCn7uuI/AAAAAAAAATw/3oGj1yIGYz8/s228-c/DSCF0028.JPG", :alt => "Child"
+    = image_tag @child.album.cover_thumb(228), :alt => "Child"
     .text
       %h1= "Sponsor #{@child.first_name}"
       %dl
@@ -11,7 +11,7 @@
         %dd= boy_girl?(@child.gender)
         %dt Likes:
         %dd= @child.likes
-      %p= "For about 1 euro, you can transform a child's life by providing basic necessities like education, food, and the chance to help them get proper education."
+      %p= "You will be able to view #{his_her?(@child.gender)} photos and full profile when you complete the sponsorship process."
       - semantic_form_for(Sponsorship.new(:child => @child), :url => mybb_sponsorships_path) do |form|
         = form.hidden_field :child_id
         - form.buttons do
@@ -28,7 +28,7 @@
       %h6== More children like #{@child.first_name}
       %ul
         %li
-          = image_tag "http://lh5.ggpht.com/_5DiaTtm-F9c/SgVMOCn7uuI/AAAAAAAAATw/3oGj1yIGYz8/s50-c/DSCF0028.JPG", :alt => "Child"
+          = image_tag @child.album.cover_thumb(50), :alt => "Child"
           %p.title Akash
           %p.desc 3 years old boy
         %li

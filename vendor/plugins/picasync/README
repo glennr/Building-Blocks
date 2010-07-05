@@ -1,0 +1,106 @@
+
+Sync with Picasa
+================
+
+Useful if you want to allow Picasa to be used as a front-end for 
+managing image assets.
+
+Lots still to todo, including:
+
+ *  Get this working on EM Httpclient2. Currently using Mechanize
+    for the SSL connection to fetch session cookie and Net:HTTP 
+    for all api calls (due to the ease of setting authorisation 
+    headers and http method). Mechanize is also used for fetching
+    and saving files.
+    Need to be able to configure EM client to use ssl, a goolge 
+    auth header, application/atom+xml content-type and variable 
+    http verbs (as dryly as possible).
+ *  tests... hardly tested at all. Lots is probably broken!
+
+This is just an initial version knocked together in a day or so
+to fulfill a requirement, I will be adding to it over the next 
+days and weeks.
+
+Usage (api is likely to change):
+=====
+
+declare some constants:
+
+[RAILS_ROOT]
+PICASA_ASSETS_PATH = [sync'd images saved here]
+GOOGLE_EMAIL = 
+GOOGLE_PASS = 
+GOOGLE_USER = 
+
+Create a new album on Picasa and return its google id.
+
+  album = Picasync::Album.new("Summer Holiday")
+  album.create!
+  puts album.api_id
+ 
+  album = Picasync::Album.find_by_title("Summer Holiday")
+  album.delete!
+
+
+  albums = Picasync::Album.find(:all)
+
+  
+Include all photographs in find:
+
+  albums = Picasync::Album.find(:all, :images)
+
+Images included by default for id/title find:
+
+  albums = Picasync::Album.find_by_title('title')
+  albums = Picasync::Album.find_by_id(id)
+
+
+Generate CSVs:
+
+  Picasync::Sync::CSV.new
+  
+    produces two csvs linked by foreign key:
+    (format has changed, both csvs now include picasa album/photo ids)
+
+    albums.csv
+
+      id,updated_at,title
+      1|2008-02-29T15:57:42.000Z|Foo
+      2|2008-02-29T10:52:51.000Z|Bar
+  
+    images.csv
+
+      album_id,album_title,updated_on,tiny,small,medium,large [local file names hashed from Picasa uri]
+      1|Foo|2008-02-29T15:57:42.000Z|dd7a4b8bc3a3.jpg|5a931bc7a07a.jpg|f5597e87ab07.jpg|ab441ebc79bc.jpg
+      2|Bar|2008-02-29T15:42:34.000Z|ffc41b6bb103.jpg|a04e32a71876.jpg|a1945a821036.jpg|05dae39288c8.jpg
+      2|Bar|2008-02-29T15:42:34.000Z|171195e2e0e9.jpg|849f7eefb72b.jpg|6316aa373cc5.jpg|146037f723de.jpg
+      2|Bar|2008-02-29T15:42:34.000Z|d87b6d955b02.jpg|5f7f0d5e3960.jpg|239ce36ddc49.jpg|13e01b353904.jpg
+      2|Bar|2008-02-29T15:42:34.000Z|f32130c1510a.jpg|b19c23e54f7d.jpg|5a350e4fdce2.jpg|6379545d4ef4.jpg   
+
+Sync local with modified galleries on Picasa:
+
+  Picasync::Sync::All.new
+
+Various options to store images manually:   
+
+  Picasync::Image.mirror(:all)
+  Picasync::Image.mirror(:album, album.id)
+  Picasync::Image.mirror(image.id, album.id)
+
+Also:
+
+  images = Picasync::Image.find(:all, album.id)
+  image = Picasync::Image.find(img.id, album.id)
+ 
+Loop through albums and print local file name and remote google path 
+for medium-size version:
+  
+  albums = Picasync::Album.find(:all, :images)
+  albums.each do |album|
+    puts album.title
+    album.images.each do |image|
+      puts img.medium
+      puts img.medium_uri
+    end
+  end
+

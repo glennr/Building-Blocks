@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100629152129) do
+ActiveRecord::Schema.define(:version => 20100705073442) do
 
   create_table "children", :force => true do |t|
     t.string   "first_name"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(:version => 20100629152129) do
     t.date     "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picasa_album"
+    t.string   "picasa_authkey"
   end
 
   create_table "sponsorships", :force => true do |t|

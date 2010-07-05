@@ -10,14 +10,14 @@ Scenario: "See banner with child details"
   When I go to the child details page for "Vijay"
   Then I should see "Sponsor Vijay"
   And I should see "Age: 3"
-  And I should see "You will be able to view his photos and full profile when you complete the sign-up process."
+  And I should see "You will be able to view his photos and full profile when you complete the sponsorship process."
   
 Scenario: "See his/her in note"
   Given the following children
       | first_name | likes    | gender | birthday    |
       | Sushma     | Painting | F      | 3_YEARS_AGO |
-  When I go to the child details page for "Vijay"
-  Then I should see "You will be able to view her photos and full profile when you complete the sign-up process."
+  When I go to the child details page for "Sushma"
+  Then I should see "You will be able to view her photos and full profile when you complete the sponsorship process."
 
 
 

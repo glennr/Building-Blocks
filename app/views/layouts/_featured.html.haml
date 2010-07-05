@@ -16,7 +16,8 @@
           %h2= link_to "Meet #{@random_child.first_name}", child_path(@random_child), :id => "sponsor_now"
           %p== #{he_she?(@random_child.gender)}'s a #{age(@random_child.birthday)} year old #{boy_girl?(@random_child.gender)} who likes #{shorten_likes(@random_child.likes)}
         #image
-          = link_to image_tag("http://lh3.ggpht.com/_5DiaTtm-F9c/SgQeUsssw_I/AAAAAAAAAGk/03-Z6-3fBxI/s154-c/P7270277.JPG", :alt => "Featured child"), child_path(@random_child)
+          - if @random_child.album
+            = link_to image_tag(@random_child.album.cover_thumb(154), :alt => "Featured child"), child_path(@random_child)
       - else
         %p There are no children defined yet
 

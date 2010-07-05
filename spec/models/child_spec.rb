@@ -13,11 +13,23 @@ describe Child do
     it { should_not allow_value('other').for(:gender) }
     
     it { should validate_presence_of(:birthday) }
+    
+    it { should validate_presence_of(:picasa_album) }
+    it { should validate_presence_of(:picasa_authkey) }
 
     it "new instance should be valid" do
       Factory.create(:child).should be_valid
     end
-    
   end
 
+  describe "setting the Picasa album using URL" do
+  
+    it "should accept a valid unlisted picasa URL" do
+      url = "http://picasaweb.google.com/robertsgd/C3?authkey=Gv1sRgCJS9yvOi8ubAJA"
+      @child = Factory(:child, :picasa_url => url)
+      @child.picasa_album.should == "C3"
+      @child.picasa_authkey.should == "Gv1sRgCJS9yvOi8ubAJA"
+    end
+  end
+  
 end

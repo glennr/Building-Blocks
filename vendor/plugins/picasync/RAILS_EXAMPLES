@@ -1,0 +1,45 @@
+# using Picasync out the box without a database (creating Image objects 
+# directly from the Picasa feed)
+
+# obviously not a good idea -- too much lag
+
+# login constants declared and picasync required in config/environment.rb
+
+# First, fetch files local -- or use picasa_tag(image,'hotlink') and serve 
+# via google.
+
+# $ script/console
+# Loading development environment (Rails 2.0.2)
+ >> Picasync::Image.mirror(:all)
+# downloaded 1316 images
+
+# controller
+
+include Picasync
+
+  def index
+    @images = Image.find(:all)
+  end
+
+#helper - this needs to take options for tiny, small, medium and large sizes.
+
+module ApplicationHelper
+
+  def picasa_tag(image, hotlink=nil)
+    if hotlink
+      "<img src=\"#{image.medium_uri}\" alt=\"#{image.title}\" />" 
+    else
+      "<img src=\"/assets/#{image.medium}\" alt=\"#{image.title}\" />" 
+    end
+  end
+
+# [haml] view
+
+-@images.each do |image|
+  =picasa_tag(image)
+
+or
+
+-@images.each do |image|
+  =picasa_tag(image, hotlink)
+

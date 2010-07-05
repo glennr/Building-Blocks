@@ -6,7 +6,7 @@ Feature: Visitor see sponsor banner
 Scenario: "See banner with child details"
   Given the following children
       | first_name | likes           | gender | birthday    |
-      | Vijay      | Soccer, cricket | M      | 3_YEARS_AGO |
+      | Vijay      | Soccer, cricket | M      | 3_YEARS_AGO | 
   When I go to the homepage
   Then I should see "Vijay"
   And I should see "he's a 3 year old boy who likes soccer"
