@@ -1,0 +1,30 @@
+<% content_for :head do %>
+
+  <% javascript_tag do %>
+
+  jQuery(document).ready(function(){
+
+    function getTotalAmounts(){
+      owe_amount = 0;
+      total_amount = 0;
+      jQuery('select[id*=sponsorship_amounts]').each(function() {
+        owe_amount += parseFloat(this.value);
+      });
+
+      //bb_support = jQuery('#mybb_donation').val() || 0;
+
+      total_amount = parseFloat(owe_amount); //+parseFloat(bb_support);
+      if (total_amount<=0) {
+        total_amount=0;
+      }
+      jQuery('#mybb_total_amount').html('€'+total_amount);
+    }
+
+    getTotalAmounts();
+
+    jQuery('select').change(function(){
+      getTotalAmounts();
+    });
+  });
+  <% end %>
+<% end %>

@@ -1,6 +1,9 @@
 %h1.heading
   = 'New Sponsorship'
 
+= error_messages_for :sponsorship,  :header_message  => nil, :message => "Oops, we couldn't save your changes"
+
+
 - semantic_form_for(resource, :url => mybb_sponsorships_path(resource.id)) do |form|
   = render 'form', :form => form
   - form.buttons do

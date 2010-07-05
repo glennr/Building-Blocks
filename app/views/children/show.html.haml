@@ -12,8 +12,9 @@
         %dt Likes:
         %dd= @child.likes
       %p= "You will be able to view #{his_her?(@child.gender)} photos and full profile when you complete the sponsorship process."
-      - semantic_form_for(Sponsorship.new(:child => @child), :url => mybb_sponsorships_path) do |form|
+      - semantic_form_for(Sponsorship.new(:child => @child, :amount => 360), :url => mybb_sponsorships_path) do |form|
         = form.hidden_field :child_id
+        = form.hidden_field :amount
         - form.buttons do
           = form.commit_button 'Sponsor Now'
 

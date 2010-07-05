@@ -1,0 +1,32 @@
+- title = "Fund Your Sponsorships"
+
+= render 'amount_js'
+
+#step2
+  = render :partial => 'shared/steps'
+
+  #main
+    %h2= "Your Sponsorships"
+    %p= "Child sponsorship is only €30 a month. That's about €1 a day to change a life."
+
+    - form_tag mybb_sponsorships_amounts_url, :method => :put, :id => "sponsorship_amounts" do
+      %table
+        %tbody.items.resources
+          - @unpaid_sponsorships.each do |sponsorship|
+            - if sponsorship == @unpaid_sponsorships.first
+              = render 'item_featured', :resource => sponsorship
+            - else
+              = render 'item', :resource => sponsorship
+            %td.actions= render 'remove', :resource => sponsorship
+    .total
+      %h4.left Today, you need to pay
+      %h4.right
+        %span#mybb_total_amount= "-"
+
+      .right= submit_tag "Purchase", { :id => "purchase" }
+
+  = render :partial => 'give_more_sidebar'
+
+#loading_status
+  One sec ...
+  = image_tag("grey_status_ball.gif")

@@ -1,0 +1,10 @@
+<% form_tag mybb_sponsorships_amounts_url, :method => :put, :id => "sponsorship_amounts" do %>
+  <% @unpaid_sponsorships.each do |sponsorship| %>
+    <% if sponsorship == @unpaid_sponsorships.first %>
+      <%= render 'item_featured', :resource => sponsorship %>
+    <% else %>
+      <%= render 'item', :resource => sponsorship %>
+    <% end %>
+  <% end %>
+  <%= submit_tag :name =>"submit", :value => "purchase", :id=>"purchase" %>
+<% end %>
