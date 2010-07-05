@@ -4,6 +4,10 @@ class Mybb::SponsorshipsController < InheritedResources::Base
   actions :create, :index
   respond_to :html, :js, :xml, :json
 
+  def create
+    create! { mybb_sponsorships_url } #redirect to index action
+  end
+
   protected
 
   def collection
