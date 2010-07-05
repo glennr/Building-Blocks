@@ -30,6 +30,8 @@
         float: left
         padding-right: 5px
         color: #888
+        
+
       
     #sponsorship_submit
       background: #333
@@ -46,6 +48,8 @@
         
     #sponsorship_submit, dl
       font-family: Palatino, Georgia, "Times New Roman", Times, serif
+  .full
+    background= image_url("divider.png") "no-repeat top"
       
   #sidebar
     .form1
@@ -96,7 +100,7 @@
           list-style-type: none 
           margin: 0
           background= image_url("thumb.png") "no-repeat top left"
-          width: 125px
+          width: 135px
           &:hover
             text-decoration: underline
           img
@@ -152,47 +156,61 @@
           background: #111
           text-decoration: none
     table
+      margin-bottom: 0
       tr
-        background= image_url("divider.png") "no-repeat top"
+        //background= image_url("divider.png") "no-repeat top"
         color: #666
         float: left
-        padding: 30px 15px 15px 15px
+        padding: 15px 0 10px 0
         &.even, &.odd
-          background= image_url("child3.png") "no-repeat left top"
-          border-top: 1px #eee solid
+          //background= image_url("child3.png") "no-repeat left top"
+          border-top: 1px #dfdfdf dotted
         &:hover
           background-color: #fafafa
         
         td
           float: left
-          margin-right: 20px
+          margin-right: 15px
           .child_name
             color= !blue
             font-size: 1.5em
             font-weight: bold
             letter-spacing: 0.03em
             text-transform: none
-            padding-top: 15px
-          .type
+          &.type
+            background= image_url("divider2.png") "no-repeat"
             color= !yellow
+            font-size: 1.1em
             font-family: Palatino, Georgia, "Times New Roman", Times, serif
+            width: 90px
+            padding: 5px 0 0 15px
+            margin-left: 15px
           &.cost
-            margin-top: 15px
-            margin-left: 10px
-            padding-left: 10px
+            margin-left: 25px
+            padding-left: 15px
             background= image_url("divider2.png") "no-repeat"
             p
-              width: 150px
-              padding: 0 0 10px 5px
+              width: 140px
+              padding: 0 0 5px 0
               color: #666
           &.actions
-            padding: 75px 0 0 10px
+            padding: 15px 0 0 7px
             a
-              color= !blue
+              padding: 5px
+              background: #ededed
+              font-size: 0.7em
+              text-transform: uppercase
+              letter-spacing: 0.1em
+              +rounded
+              color: #aaa
+              &:hover
+                color= !blue
+                background: #dedede
         &.first
           background= image_url("child2.png") "no-repeat" 
-          margin: 10px 0
-          padding: 28px 0 20px 22px
+          margin-top: 20px
+          padding: 28px 0 10px 22px
+          border: none
           img
             padding-right: 10px
           .child_name
@@ -200,18 +218,31 @@
             font-weight: bold
           .type
             font-size: 1.2em
+            color= !yellow
+            font-family: Palatino, Georgia, "Times New Roman", Times, serif
+          .cost
+            margin-left: 20px
+          .pending
+            width: 100%
+            h6
+              margin: 50px 0 0 -20px
+              clear: both
           .actions
-            padding-top: 45px
-            a
-              color= !blue
+            float: right
+            padding: 40px 0 0 40px
+
     .total
       background= image_url("divider.png") "no-repeat top"
       float: left
       padding-top: 20px
       margin-bottom: 20px
+      h4.right
+        padding-right: 20px
+        font-size: 2em
+        text-transform: uppercase
       .left
         h6
-          margin-top: 20px
+          margin-top: 25px
         p
           width: 450px
           
@@ -221,7 +252,7 @@
         color= !yellow
         font-family: Palatino, Georgia, "Times New Roman", Times, serif
         font-size: 1.1em
-        margin-top: 35px
+        margin-top: 20px
         padding: 7px 20px
         cursor: pointer
         +rounded
@@ -231,32 +262,49 @@
         
   .full
     margin-bottom: 50px
-    
-#step2
-  #sidebar
-    .title
-      padding: 0 0 15px 15px
+
   .third
     .top
-      background= image_url("form2.png") "no-repeat top center"
+      padding: 40px 20px 0 0
+      h4
+        padding-bottom: 10px
       h6
-        padding: 20px 10px 10px 20px
+        padding: 10px 0 0 20px
       p
         font-size: 0.9em
         line-height: 1em
-        padding-right: 10px
+        padding-bottom: 5px
+        color: #666
       img
         float: left
         padding: 0 10px 0 20px
       a
         color= !yellow
         font-size: 0.8em
-      
+
+#step2
+  #sidebar
+    .title
+      padding: 0 0 15px 15px
+    
+    .third
+      .top
+        float: left
+        background= image_url("form2.png") "no-repeat top center"
+        padding: 15px 20px 10px 0
+        h6
+          padding-bottom: 5px
+        p
+          padding-bottom: 0px
+
     .bottom
       background= image_url("form2.png") "no-repeat bottom center"
-      min-height: 55px
-      padding-top: 10px
+      float: left
+      width: 100%
+      min-height: 60px
+      
       .left
+        
         padding-left: 20px
       .right
         padding-right: 20px
@@ -277,3 +325,6 @@
         color= !yellow
         padding: 5px 10px
         +rounded
+        &.alt
+          background: #eee
+          margin-top: 12px

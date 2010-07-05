@@ -3,8 +3,6 @@
   %td.data
     .child_name= h resource.child.try(:first_name)
     .type Child Sponsorship
-    .actions
-      = link_to 'X remove', mybb_sponsorship_path(resource), :confirm => 'Are you sure?', :method => :delete
   %td.cost
     %p Choose an amount you wish to donate:
     %input{:type=>"radio"}
@@ -18,3 +16,9 @@
     %br
     %input{:type=>"radio"}
     %label €360 yearly
+
+  %td.actions
+    = link_to 'X remove', mybb_sponsorship_path(resource), :confirm => 'Are you sure?', :method => :delete
+
+  %td.pending
+    %h6 Pending sponsorships
