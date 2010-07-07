@@ -14,3 +14,5 @@ responders --version "= 0.4.5"
 inherited_resources --version "= 1.0.6"
 factory_girl --version "= 1.2.4"
 faker
+mechanize
+hpricot

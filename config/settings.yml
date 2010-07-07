@@ -5,17 +5,15 @@
 #Dont forget to run the heroku config loader first: rake heroku:vars:load 
 --- 
 production: 
-  :gateway: 
-    :password: <%= ENV['GATEWAY__PASSWORD'] %>
-    :login: <%= ENV['GATEWAY__LOGIN'] %>
   :site_name: <%= ENV['SITE_NAME'] %>
   :action_controller: 
     :session: 
       :key: <%= ENV['ACTION_CONTROLLER__SESSION__KEY'] %>
       :secret: <%= ENV['ACTION_CONTROLLER__SESSION__SECRET'] %>
+  :gateway: 
+    :login: <%= ENV['GATEWAY__LOGIN'] %>
+    :password: <%= ENV['GATEWAY__PASSWORD'] %>
   :site_description: <%= ENV['SITE_DESCRIPTION'] %>
-  :site: 
-    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
   :action_mailer: 
     :delivery_method: <%= ENV['ACTION_MAILER__DELIVERY_METHOD'] %>
     :smtp_settings: 
@@ -26,29 +24,33 @@ production:
       :perform_deliveries: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PERFORM_DELIVERIES'] %>
       :port: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PORT'] %>
       :password: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PASSWORD'] %>
+  :site: 
+    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
   :meta: 
     :description: <%= ENV['META__DESCRIPTION'] %>
     :keywords: <%= ENV['META__KEYWORDS'] %>
+  google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
+  :hoptoad: 
+    :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
   :google: 
     :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
     :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
     :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
-  google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
-  :hoptoad: 
-    :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
+    :picasa: 
+      :email: <%= ENV['GOOGLE__PICASA__EMAIL'] %>
+      :password: <%= ENV['GOOGLE__PICASA__PASSWORD'] %>
+      :user: <%= ENV['GOOGLE__PICASA__USER'] %>
   :default_host: <%= ENV['DEFAULT_HOST'] %>
 development: 
-  :gateway: 
-    :password: <%= ENV['GATEWAY__PASSWORD'] %>
-    :login: <%= ENV['GATEWAY__LOGIN'] %>
   :action_controller: 
     :session: 
       :key: <%= ENV['ACTION_CONTROLLER__SESSION__KEY'] %>
       :secret: <%= ENV['ACTION_CONTROLLER__SESSION__SECRET'] %>
   :site_name: <%= ENV['SITE_NAME'] %>
+  :gateway: 
+    :login: <%= ENV['GATEWAY__LOGIN'] %>
+    :password: <%= ENV['GATEWAY__PASSWORD'] %>
   :site_description: <%= ENV['SITE_DESCRIPTION'] %>
-  :site: 
-    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
   :action_mailer: 
     :delivery_method: <%= ENV['ACTION_MAILER__DELIVERY_METHOD'] %>
     :smtp_settings: 
@@ -59,29 +61,33 @@ development:
       :perform_deliveries: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PERFORM_DELIVERIES'] %>
       :port: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PORT'] %>
       :password: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PASSWORD'] %>
-  :google: 
-    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
-    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
-    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
+  :site: 
+    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
   :meta: 
     :description: <%= ENV['META__DESCRIPTION'] %>
     :keywords: <%= ENV['META__KEYWORDS'] %>
   :hoptoad: 
     :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
   google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
+  :google: 
+    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
+    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
+    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
+    :picasa: 
+      :email: <%= ENV['GOOGLE__PICASA__EMAIL'] %>
+      :password: <%= ENV['GOOGLE__PICASA__PASSWORD'] %>
+      :user: <%= ENV['GOOGLE__PICASA__USER'] %>
   :default_host: <%= ENV['DEFAULT_HOST'] %>
 cucumber: 
-  :gateway: 
-    :password: <%= ENV['GATEWAY__PASSWORD'] %>
-    :login: <%= ENV['GATEWAY__LOGIN'] %>
   :action_controller: 
     :session: 
       :key: <%= ENV['ACTION_CONTROLLER__SESSION__KEY'] %>
       :secret: <%= ENV['ACTION_CONTROLLER__SESSION__SECRET'] %>
   :site_name: <%= ENV['SITE_NAME'] %>
+  :gateway: 
+    :login: <%= ENV['GATEWAY__LOGIN'] %>
+    :password: <%= ENV['GATEWAY__PASSWORD'] %>
   :site_description: <%= ENV['SITE_DESCRIPTION'] %>
-  :site: 
-    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
   :action_mailer: 
     :delivery_method: <%= ENV['ACTION_MAILER__DELIVERY_METHOD'] %>
     :smtp_settings: 
@@ -92,31 +98,35 @@ cucumber:
       :perform_deliveries: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PERFORM_DELIVERIES'] %>
       :port: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PORT'] %>
       :password: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PASSWORD'] %>
+  :site: 
+    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
+  :meta: 
+    :description: <%= ENV['META__DESCRIPTION'] %>
+    :keywords: <%= ENV['META__KEYWORDS'] %>
+  :hoptoad: 
+    :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
+  google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
   :autofeature: <%= ENV['AUTOFEATURE'] %>
   :google: 
     :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
     :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
     :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
-  :meta: 
-    :description: <%= ENV['META__DESCRIPTION'] %>
-    :keywords: <%= ENV['META__KEYWORDS'] %>
-  :hoptoad: 
-    :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
-  google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
-  :rspec: <%= ENV['RSPEC'] %>
+    :picasa: 
+      :email: <%= ENV['GOOGLE__PICASA__EMAIL'] %>
+      :password: <%= ENV['GOOGLE__PICASA__PASSWORD'] %>
+      :user: <%= ENV['GOOGLE__PICASA__USER'] %>
   :default_host: <%= ENV['DEFAULT_HOST'] %>
+  :rspec: <%= ENV['RSPEC'] %>
 staging: 
-  :gateway: 
-    :password: <%= ENV['GATEWAY__PASSWORD'] %>
-    :login: <%= ENV['GATEWAY__LOGIN'] %>
   :action_controller: 
     :session: 
       :key: <%= ENV['ACTION_CONTROLLER__SESSION__KEY'] %>
       :secret: <%= ENV['ACTION_CONTROLLER__SESSION__SECRET'] %>
   :site_name: <%= ENV['SITE_NAME'] %>
+  :gateway: 
+    :login: <%= ENV['GATEWAY__LOGIN'] %>
+    :password: <%= ENV['GATEWAY__PASSWORD'] %>
   :site_description: <%= ENV['SITE_DESCRIPTION'] %>
-  :site: 
-    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
   :action_mailer: 
     :delivery_method: <%= ENV['ACTION_MAILER__DELIVERY_METHOD'] %>
     :smtp_settings: 
@@ -127,29 +137,33 @@ staging:
       :perform_deliveries: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PERFORM_DELIVERIES'] %>
       :port: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PORT'] %>
       :password: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PASSWORD'] %>
-  :google: 
-    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
-    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
-    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
+  :site: 
+    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
   :meta: 
     :description: <%= ENV['META__DESCRIPTION'] %>
     :keywords: <%= ENV['META__KEYWORDS'] %>
   :hoptoad: 
     :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
   google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
+  :google: 
+    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
+    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
+    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
+    :picasa: 
+      :email: <%= ENV['GOOGLE__PICASA__EMAIL'] %>
+      :password: <%= ENV['GOOGLE__PICASA__PASSWORD'] %>
+      :user: <%= ENV['GOOGLE__PICASA__USER'] %>
   :default_host: <%= ENV['DEFAULT_HOST'] %>
 test: 
-  :gateway: 
-    :password: <%= ENV['GATEWAY__PASSWORD'] %>
-    :login: <%= ENV['GATEWAY__LOGIN'] %>
   :action_controller: 
     :session: 
       :key: <%= ENV['ACTION_CONTROLLER__SESSION__KEY'] %>
       :secret: <%= ENV['ACTION_CONTROLLER__SESSION__SECRET'] %>
   :site_name: <%= ENV['SITE_NAME'] %>
+  :gateway: 
+    :login: <%= ENV['GATEWAY__LOGIN'] %>
+    :password: <%= ENV['GATEWAY__PASSWORD'] %>
   :site_description: <%= ENV['SITE_DESCRIPTION'] %>
-  :site: 
-    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
   :action_mailer: 
     :delivery_method: <%= ENV['ACTION_MAILER__DELIVERY_METHOD'] %>
     :smtp_settings: 
@@ -160,16 +174,22 @@ test:
       :perform_deliveries: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PERFORM_DELIVERIES'] %>
       :port: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PORT'] %>
       :password: <%= ENV['ACTION_MAILER__SMTP_SETTINGS__PASSWORD'] %>
-  :autofeature: <%= ENV['AUTOFEATURE'] %>
-  :google: 
-    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
-    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
-    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
+  :site: 
+    :info_account_email: <%= ENV['SITE__INFO_ACCOUNT_EMAIL'] %>
   :meta: 
     :description: <%= ENV['META__DESCRIPTION'] %>
     :keywords: <%= ENV['META__KEYWORDS'] %>
   :hoptoad: 
     :api_key: <%= ENV['HOPTOAD__API_KEY'] %>
   google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
-  :rspec: <%= ENV['RSPEC'] %>
+  :autofeature: <%= ENV['AUTOFEATURE'] %>
+  :google: 
+    :analytics_user_id: <%= ENV['GOOGLE__ANALYTICS_USER_ID'] %>
+    :verification_code: <%= ENV['GOOGLE__VERIFICATION_CODE'] %>
+    :custom_search_key: <%= ENV['GOOGLE__CUSTOM_SEARCH_KEY'] %>
+    :picasa: 
+      :email: <%= ENV['GOOGLE__PICASA__EMAIL'] %>
+      :password: <%= ENV['GOOGLE__PICASA__PASSWORD'] %>
+      :user: <%= ENV['GOOGLE__PICASA__USER'] %>
   :default_host: <%= ENV['DEFAULT_HOST'] %>
+  :rspec: <%= ENV['RSPEC'] %>

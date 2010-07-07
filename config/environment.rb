@@ -43,6 +43,10 @@ Rails::Initializer.run do |config|
   config.gem "factory_girl",     :lib => false, :version => '= 1.2.4'
   config.gem 'faker',            :lib => false
 
+  #picasasync - remove when gemi-fied!
+  config.gem 'mechanize'
+  config.gem 'hpricot'
+
   config.time_zone = 'UTC'
 
   DEFAULT_KEY = '_yourapp_session'
