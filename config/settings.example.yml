@@ -30,6 +30,10 @@ production:
       :analytics_user_id: google_analytics_code
       :verification_code: google_webmaster_verification_code
       :custom_search_key: google_custom_search_code
+      :picasa:
+        :email: youruser@gmail.com
+        :password: yourpass
+        :user: youruser
   :cron_job_code: secret_key_to_access_the_cronjob
   :gateway:
       :login: login_to_payment_gateway
